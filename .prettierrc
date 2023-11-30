@@ -1,0 +1,15 @@
+{
+	"useTabs": true,
+	"arrowParens": "always",
+	"singleQuote": false,
+	"trailingComma": "es5",
+	"printWidth": 100,
+	"tabWidth": 2,
+	"semi": true,
+	"plugins": [],
+	"overrides": [
+		{
+			"files": "*.ts"
+		}
+	]
+}
