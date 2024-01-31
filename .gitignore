@@ -6,3 +6,5 @@ rest
 
 .env
 .env.local
+
+pnpm-lock.yaml
