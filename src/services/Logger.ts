@@ -1,8 +1,6 @@
 import { Cause, Config, Effect as Ef, Layer, Logger, LogLevel } from "effect";
 
-const LOG_LEVEL = Config.logLevel("LOG_LEVEL").pipe(
-  Config.withDefault(LogLevel.Info),
-);
+const LOG_LEVEL = Config.logLevel("LOG_LEVEL").pipe(Config.withDefault(LogLevel.Info));
 
 const LogLevelLive = LOG_LEVEL.pipe(
   Ef.map((level) => Logger.minimumLogLevel(level)),
@@ -11,6 +9,4 @@ const LogLevelLive = LOG_LEVEL.pipe(
 export const LoggerLive = Layer.merge(Logger.json, LogLevelLive);
 
 export const logUnexpectedError = (cause: Cause.Cause<unknown>) =>
-  Ef.sync(() =>
-    console.error(`Unexpected application error:\n${Cause.pretty(cause)}`)
-  );
+  Ef.sync(() => console.error(`Unexpected application error:\n${Cause.pretty(cause)}`));

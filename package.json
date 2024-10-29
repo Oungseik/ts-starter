@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "bun run src/app.ts",
+    "format": "prettier -w ./src",
     "lint": "eslint --ignore-pattern \"{dist,node_modules}\"",
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit migrate",

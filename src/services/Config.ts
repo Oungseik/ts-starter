@@ -12,10 +12,9 @@ export const config = Ef.gen(function* () {
     dbUrl: yield* Config.string("DB_URL"),
     dialect: (yield* Config.string("DB_DIALECT").pipe(
       Config.validate({
-        message:
-          "expect DB_DIALECT to be one of 'sqlite', 'mysql', 'turso' or 'postgresql'",
+        message: "expect DB_DIALECT to be one of 'sqlite', 'mysql', 'turso' or 'postgresql'",
         validation: (s) => dialects.includes(s as any),
       }),
-    )) as typeof dialects[number],
+    )) as (typeof dialects)[number],
   };
 });
