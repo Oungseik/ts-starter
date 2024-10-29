@@ -1,65 +1,16 @@
-import { Context, Effect, Layer } from "effect";
-import { pino } from "pino";
+import { Cause, Config, Effect as Ef, Layer, Logger, LogLevel } from "effect";
 
-const p = pino();
+const LOG_LEVEL = Config.logLevel("LOG_LEVEL").pipe(
+  Config.withDefault(LogLevel.Info),
+);
 
-class Logger extends Context.Tag("Logger")<Logger, {
-  readonly info: (
-    data: unknown,
-    options?: Record<string, unknown>,
-  ) => Effect.Effect<void>;
-  readonly warn: (
-    data: unknown,
-    options?: Record<string, unknown>,
-  ) => Effect.Effect<void>;
-  readonly debug: (
-    data: unknown,
-    options?: Record<string, unknown>,
-  ) => Effect.Effect<void>;
-  readonly error: (
-    data: unknown,
-    options?: Record<string, unknown>,
-  ) => Effect.Effect<void>;
-  readonly trace: (
-    data: unknown,
-    options?: Record<string, unknown>,
-  ) => Effect.Effect<void>;
-  readonly fatal: (
-    data: unknown,
-    options?: Record<string, unknown>,
-  ) => Effect.Effect<void>;
-}>() {}
+const LogLevelLive = LOG_LEVEL.pipe(
+  Ef.map((level) => Logger.minimumLogLevel(level)),
+  Layer.unwrapEffect,
+);
+export const LoggerLive = Layer.merge(Logger.json, LogLevelLive);
 
-export const LoggerLive = Layer.succeed(Logger, {
-  info(data, options) {
-    let logger = options ? p.child(options) : p;
-    logger.info(data);
-    return Effect.void;
-  },
-
-  warn(data, options) {
-    let logger = options ? p.child(options) : p;
-    logger.warn(data);
-    return Effect.void;
-  },
-  debug(data, options) {
-    let logger = options ? p.child(options) : p;
-    logger.debug(data);
-    return Effect.void;
-  },
-  error(data, options) {
-    let logger = options ? p.child(options) : p;
-    logger.error(data);
-    return Effect.void;
-  },
-  trace(data, options) {
-    let logger = options ? p.child(options) : p;
-    logger.trace(data);
-    return Effect.void;
-  },
-  fatal(data, options) {
-    let logger = options ? p.child(options) : p;
-    logger.fatal(data);
-    return Effect.void;
-  },
-});
+export const logUnexpectedError = (cause: Cause.Cause<unknown>) =>
+  Ef.sync(() =>
+    console.error(`Unexpected application error:\n${Cause.pretty(cause)}`)
+  );
