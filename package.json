@@ -6,12 +6,16 @@
     "dev": "bun run src/app.ts"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "typescript": "^5.6.3"
   },
   "peerDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^5.6.3"
   },
   "dependencies": {
+    "@effect/sql-drizzle": "^0.17.0",
+    "@effect/sql-sqlite-bun": "^0.19.0",
+    "drizzle-orm": "^0.31",
     "effect": "^3.10.5",
     "hono": "^4.6.8"
   }
