@@ -18,6 +18,8 @@
         devShell = pkgs.mkShell {
           buildInputs = with pkgs; [
             bun
+            nodejs_22
+            python3
           ];
 
           shellHook = '''';

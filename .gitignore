@@ -135,5 +135,5 @@ yarn.lock
 yarn-error.log
 bun.lockb
 
-./drizzle
-databases/*.sqlite
+drizzle
+databases/*
