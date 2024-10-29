@@ -1,5 +1,6 @@
-import { Hono } from "hono";
 import { Effect as Ef } from "effect";
+import { Hono } from "hono";
+
 import { config } from "./services/Config";
 import { LoggerLive } from "./services/Logger";
 

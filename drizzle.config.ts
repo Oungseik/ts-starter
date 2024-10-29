@@ -1,5 +1,6 @@
 import { defineConfig } from "drizzle-kit";
 import { Effect } from "effect";
+
 import { config as C } from "./src/services/Config";
 
 const config = Effect.gen(function* () {

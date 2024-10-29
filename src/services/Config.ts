@@ -1,5 +1,5 @@
-import { Config, Effect as Ef } from "effect";
 import dotenv from "dotenv";
+import { Config, Effect as Ef } from "effect";
 
 dotenv.config();
 
