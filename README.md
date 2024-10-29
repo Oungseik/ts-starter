@@ -1,15 +1,11 @@
-# starter
+# (Typescript + Effect-ts + Drizzle + Hono + Bun) Starter
 
-To install dependencies:
+<details>
+<summary>.env</summary>
 
-```bash
-bun install
+```.env
+DB_URL=./path/to/sqlite/db
+DB_DIALECT=sqlite         # dialect of the drizzle orm
 ```
 
-To run:
-
-```bash
-bun run src/index.ts
-```
-
-This project was created using `bun init` in bun v1.1.29. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+</details>
