@@ -3,10 +3,12 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run src/app.ts"
+    "dev": "bun run src/app.ts",
+    "studio": "drizzle-kit studio"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "drizzle-kit": "^0.26.2",
     "typescript": "^5.6.3"
   },
   "peerDependencies": {
@@ -15,7 +17,8 @@
   "dependencies": {
     "@effect/sql-drizzle": "^0.17.0",
     "@effect/sql-sqlite-bun": "^0.19.0",
-    "drizzle-orm": "^0.31",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.31.4",
     "effect": "^3.10.5",
     "hono": "^4.6.8"
   }
