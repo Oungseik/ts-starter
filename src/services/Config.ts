@@ -9,6 +9,8 @@ export const config = Ef.gen(function* () {
   return {
     host: yield* Config.string("HOST").pipe(Config.withDefault("127.0.0.1")),
     port: yield* Config.number("PORT").pipe(Config.withDefault(5000)),
+    jwtKey: yield* Config.string("JWT_KEY"),
+    jwtExpire: yield* Config.string("JWT_EXPIRE").pipe(Config.withDefault("7d")),
     dbUrl: yield* Config.string("DB_URL"),
     dialect: (yield* Config.string("DB_DIALECT").pipe(
       Config.validate({
