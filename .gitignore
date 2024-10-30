@@ -136,4 +136,4 @@ yarn-error.log
 bun.lockb
 
 drizzle
-databases/*
+databases
