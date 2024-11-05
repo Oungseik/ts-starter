@@ -7,6 +7,7 @@ const dialects = ["sqlite", "mysql", "postgresql", "turso"] as const;
 
 export const config = Ef.gen(function* () {
   return {
+    socketioPort: yield* Config.number("SOCKET_IO_PORT").pipe(Config.withDefault(5050)),
     port: yield* Config.number("PORT").pipe(Config.withDefault(5000)),
     jwtKey: yield* Config.string("JWT_KEY"),
     jwtExpire: yield* Config.string("JWT_EXPIRE").pipe(Config.withDefault("7d")),
