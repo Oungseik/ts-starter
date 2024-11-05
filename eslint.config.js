@@ -11,7 +11,6 @@ export default [
   ...tseslint.configs.recommended,
   {
     files: ["**/*.{js,mjs,cjs,ts,mts}"],
-    ignores: ["node_modules/", "dist/", "build/"],
     plugins: {
       "simple-import-sort": simpleImportSort,
     },
@@ -20,10 +19,11 @@ export default [
       "no-debugger": "error",
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
+      "require-yield": "off",
       "@typescript-eslint/no-empty-object-type": "off",
-      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/no-explicit-any": "off",
       "no-unused-vars": [
-        "warn",
+        "off",
         {
           args: "all",
           argsIgnorePattern: "^_",
@@ -33,5 +33,8 @@ export default [
         },
       ],
     },
+  },
+  {
+    ignores: ["node_modules/", "dist/", "build/"],
   },
 ];

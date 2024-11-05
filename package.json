@@ -5,13 +5,14 @@
   "scripts": {
     "dev": "bun run src/app.ts",
     "format": "prettier -w ./src",
-    "lint": "eslint --ignore-pattern \"{dist,node_modules}\"",
+    "lint": "eslint",
     "generate": "drizzle-kit generate",
     "migrate": "drizzle-kit migrate",
     "studio": "drizzle-kit studio"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/bun": "latest",
     "@types/jsonwebtoken": "^9.0.7",
     "better-sqlite3": "^11.5.0",
@@ -30,6 +31,7 @@
     "@effect/sql-drizzle": "^0.17.0",
     "@effect/sql-sqlite-bun": "^0.19.0",
     "argon2": "^0.41.1",
+    "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.35.3",
     "effect": "^3.10.5",

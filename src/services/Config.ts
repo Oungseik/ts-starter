@@ -12,6 +12,7 @@ export const config = Ef.gen(function* () {
     jwtKey: yield* Config.string("JWT_KEY"),
     jwtExpire: yield* Config.string("JWT_EXPIRE").pipe(Config.withDefault("7d")),
     dbUrl: yield* Config.string("DB_URL"),
+    salt: yield* Config.string("SALT").pipe(Config.withDefault("D;%yL9TS:5PalS/d")),
     dialect: (yield* Config.string("DB_DIALECT").pipe(
       Config.validate({
         message: "expect DB_DIALECT to be one of 'sqlite', 'mysql', 'turso' or 'postgresql'",
