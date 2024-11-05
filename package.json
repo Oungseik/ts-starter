@@ -3,6 +3,7 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
+    "build": "tsup",
     "dev": "bun run src/app.ts",
     "format": "prettier -w ./src",
     "lint": "eslint",
@@ -21,6 +22,8 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "globals": "^15.11.0",
     "prettier": "^3.3.3",
+    "source-map-support": "^0.5.21",
+    "tsup": "^8.3.5",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.12.1"
   },
