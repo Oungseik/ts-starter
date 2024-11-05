@@ -7,9 +7,9 @@ import { LoggerLive } from "./services/Logger";
 const app = new Hono();
 
 export const server = Ef.gen(function* () {
-  const { port, host } = yield* config;
+  const { port } = yield* config;
 
-  yield* Ef.logDebug(`server is running at ${host}:${port}`);
+  yield* Ef.log(`server is running at http://localhost:${port}`);
   return { fetch: app.fetch, port };
 }).pipe(Ef.annotateLogs({ file: "app.ts" }));
 
