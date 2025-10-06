@@ -1,3 +1,11 @@
+# DEPRECATED
+Now Effect TS have [HTTP API](https://github.com/Effect-TS/effect/tree/main/packages/platform) package which support both NODE and Bun in robust way.
+
+The ideal setup is implement HTTP api in Monorepo package and share between backend which contains the HTTP API live and HTTP API Test implementions and HTTP API Client which can generate typesafe api for Frontend. 
+
+This approach has many advantages like, E2E type-safety, on the fly OpenAPI spec generation, Typesafe Error handling, Logging, Opentelemetry and integrate well with Effect ecosystem.
+
+--- 
 # (Typescript + Effect-ts + Drizzle + Hono + Bun) Starter
 
 <details>
