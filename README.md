@@ -6,7 +6,7 @@ The ideal setup is implement HTTP api in Monorepo package and share between back
 This approach has many advantages like, E2E type-safety, on the fly OpenAPI spec generation, Typesafe Error handling, Logging, Opentelemetry and integrate well with Effect ecosystem.
 
 --- 
-# (Typescript + Effect-ts + Drizzle + Hono + Bun) Starter
+## (Typescript + Effect-ts + Drizzle + Hono + Bun) Starter
 
 <details>
 <summary>.env</summary>
